@@ -5,6 +5,7 @@
  */
 
 const home = require('../app/controllers/home');
+const seed = require('../app/controllers/seed');
 
 /**
  * Expose
@@ -12,6 +13,9 @@ const home = require('../app/controllers/home');
 
 module.exports = function(app) {
   app.get('/', home.index);
+  app.get('/read-seed', seed.index);
+  app.get('/write-seed', seed.write);
+
 
   /**
    * Error handling
